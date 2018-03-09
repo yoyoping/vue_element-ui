@@ -104,93 +104,24 @@ export default {
         user: '',
         region: ''
       },
-      tableData3: [{
-        date: '1',
-        name: '王小虎',
-        phone: '13654785456',
-        addr: '四川省成都市',
-        integral: '100',
-        rule: '角色'
-      }, {
-        date: '1',
-        name: '王小虎',
-        phone: '13654785456',
-        addr: '四川省成都市',
-        integral: '100',
-        rule: '角色'
-      }, {
-        date: '1',
-        name: '王小虎',
-        phone: '13654785456',
-        addr: '四川省成都市',
-        integral: '100',
-        rule: '角色'
-      }, {
-        date: '1',
-        name: '王小虎',
-        phone: '13654785456',
-        addr: '四川省成都市',
-        integral: '100',
-        rule: '角色'
-      }, {
-        date: '1',
-        name: '王小虎',
-        phone: '13654785456',
-        addr: '四川省成都市',
-        integral: '100',
-        rule: '角色'
-      }, {
-        date: '1',
-        name: '王小虎',
-        phone: '13654785456',
-        addr: '四川省成都市',
-        integral: '100',
-        rule: '角色'
-      }, {
-        date: '1',
-        name: '王小虎',
-        phone: '13654785456',
-        addr: '四川省成都市',
-        integral: '100',
-        rule: '角色'
-      }, {
-        date: '1',
-        name: '王小虎',
-        phone: '13654785456',
-        addr: '四川省成都市',
-        integral: '100',
-        rule: '角色'
-      }, {
-        date: '1',
-        name: '王小虎',
-        phone: '13654785456',
-        addr: '四川省成都市',
-        integral: '100',
-        rule: '角色'
-      }, {
-        date: '1',
-        name: '王小虎',
-        phone: '13654785456',
-        addr: '四川省成都市',
-        integral: '100',
-        rule: '角色'
-      }, {
-        date: '1',
-        name: '王小虎',
-        phone: '13654785456',
-        addr: '四川省成都市',
-        integral: '100',
-        rule: '角色'
-      }]
+      tableData3: []
     }
   },
   created () {
-    let h = document.documentElement.clientHeight || document.body.clientHeight
-    this.maxH = h - (134 + 40 + 62 + 112)
+    this.getUserlist()
   },
   mounted () {
   },
   methods: {
+    // 获取数据
+    getUserlist () {
+      this.fetch.get('/userlist').then(res => {
+        console.log(res)
+        this.tableData3 = res.data.list
+        let h = document.documentElement.clientHeight || document.body.clientHeight
+        this.maxH = h - (134 + 40 + 62 + 112)
+      })
+    },
     _change (data, type) {
       // 移动之前拥有的权限
       const arr = []

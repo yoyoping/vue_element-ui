@@ -34,14 +34,14 @@ fetch.interceptors.response.use(response => {
   const res = response.data
   // console.log(res)
   // 200-成功  4001-token过期 5000-暂无数据 4004-未登录
-  if (res.status !== 200 && res.status !== 4001 && res.status !== 5000 && res.status !== 4004 && res.status !== 4013) {
-    Message({
-      message: res.msg,
-      type: 'error',
-      duration: 2 * 1000,
-      showClose: true
-    })
-  }
+  // if (res.status !== 200 && res.status !== 4001 && res.status !== 5000 && res.status !== 4004 && res.status !== 4013) {
+  //   Message({
+  //     message: res.msg,
+  //     type: 'error',
+  //     duration: 2 * 1000,
+  //     showClose: true
+  //   })
+  // }
   // 判断在其他设备登录
   if (res.status === 4004 && localStorage.userType) {
     Message({
