@@ -1555,6 +1555,16 @@ compressible@~2.0.13:
   dependencies:
     mime-db ">= 1.33.0 < 2"
 
+compression-webpack-plugin@^1.1.11:
+  version "1.1.11"
+  resolved "http://registry.npm.taobao.org/compression-webpack-plugin/download/compression-webpack-plugin-1.1.11.tgz#8384c7a6ead1d2e2efb190bdfcdcf35878ed8266"
+  dependencies:
+    cacache "^10.0.1"
+    find-cache-dir "^1.0.0"
+    neo-async "^2.5.0"
+    serialize-javascript "^1.4.0"
+    webpack-sources "^1.0.1"
+
 compression@^1.5.2:
   version "1.7.2"
   resolved "http://registry.npm.taobao.org/compression/download/compression-1.7.2.tgz#aaffbcd6aaf854b44ebb280353d5ad1651f59a69"
@@ -4248,6 +4258,10 @@ ncname@1.0.x:
 negotiator@0.6.1:
   version "0.6.1"
   resolved "http://registry.npm.taobao.org/negotiator/download/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
+
+neo-async@^2.5.0:
+  version "2.5.0"
+  resolved "http://registry.npm.taobao.org/neo-async/download/neo-async-2.5.0.tgz#76b1c823130cca26acfbaccc8fbaf0a2fa33b18f"
 
 no-case@^2.2.0:
   version "2.3.2"

@@ -36,6 +36,9 @@ export default new Router({
       name: 'systemConfig',
       component: _import_('Layout'),
       redirect: '/systemConfig/userList',
+      meta: {
+        title: '系统配置'
+      },
       children: [
         {
           path: 'userList',
@@ -62,6 +65,9 @@ export default new Router({
       name: 'component',
       component: _import_('Layout'),
       redirect: '/component/editor',
+      meta: {
+        title: '组件'
+      },
       children: [
         {
           path: 'editor',
@@ -97,6 +103,22 @@ export default new Router({
           meta: {
             title: '城市联动',
             role: 'admin'
+          }
+        }
+      ]
+    },
+    {
+      path: '',
+      name: 'test',
+      component: _import_('Layout'),
+      redirect: '/test',
+      children: [
+        {
+          path: '/test',
+          name: 'index',
+          component: _import_('test_/Index'),
+          meta: {
+            title: '测试'
           }
         }
       ]

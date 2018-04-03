@@ -64,7 +64,7 @@ module.exports = {
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
-    productionGzip: false,
+    productionGzip: true,
     productionGzipExtensions: ['js', 'css'],
 
     // Run the build command with an extra argument to
@@ -85,15 +85,15 @@ module.exports = {
     // (https://github.com/webpack/css-loader#sourcemaps)
     // In our experience, they generally work as expected,
     // just be aware of this issue when enabling this option.
-    cssSourceMap: false
-    // proxyTable: {
-    //   '/api': { // 这里意思是对本机/api开头的API转发
-    //     target: 'http://api.kuanjiedai.com',
-    //     changeOrigin: true,
-    //     pathRewrite: {
-    //       '^/api' : '/api',
-    //     },
-    //   },
-    // }
+    cssSourceMap: false,
+    proxyTable: {
+      '/api': { // 这里意思是对本机/api开头的API转发
+        target: 'http://127.0.0.1:8080',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api' : '/api',
+        },
+      },
+    }
   }
 }

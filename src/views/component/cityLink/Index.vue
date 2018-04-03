@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-import Addr from './Addr'
+import Addr from '_components/Addr'
 export default {
   components: {
     Addr

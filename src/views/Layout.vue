@@ -2,7 +2,7 @@
   <div id="app">
     <el-container>
       <el-header>
-        <p class="logo"><router-link to="/">LOGO</router-link></p>
+        <Herder_></Herder_>
       </el-header>
       <el-container class="main_">
         <el-aside width="200px">
@@ -11,12 +11,11 @@
         <el-container class="rg">
           <el-main>
             <!-- 面包屑 -->
-            <el-breadcrumb separator-class="el-icon-arrow-right">
-              <el-breadcrumb-item :to="{ path: '/' }">系统配置</el-breadcrumb-item>
-              <el-breadcrumb-item>用户管理</el-breadcrumb-item>
-            </el-breadcrumb>
+            <breadcrumb></breadcrumb>
             <div class="content_ scroll">
-              <router-view></router-view>
+              <transition name="fade">
+                <router-view></router-view>
+              </transition>
             </div>
           </el-main>
           <!-- <el-footer>Footer</el-footer> -->
@@ -26,11 +25,13 @@
   </div>
 </template>
 <script>
-import SlideMenu from '_views/SlideMenu'
+import SlideMenu from './SlideMenu'
+import Herder_ from './Header_'
+import breadcrumb from '_components/breadcrumb' //
 export default {
   name: 'App',
   components: {
-    SlideMenu
+    SlideMenu, Herder_, breadcrumb
   }
 }
 </script>

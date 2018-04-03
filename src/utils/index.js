@@ -8,6 +8,7 @@ const fetch = axios.create({
   // baseURL: 'http://api.com/api/v1', // 代理
   // baseURL: '/api/v1', // 非代理
   baseURL: 'https://www.easy-mock.com/mock/5a62bc9868c0d85c378988bf/yoyoping', // easy-mock
+  // baseURL: '',
   timeout: 15000
 })
 

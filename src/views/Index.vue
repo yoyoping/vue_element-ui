@@ -38,7 +38,7 @@ export default {
       myChart.setOption({
         tooltip: {},
         xAxis: {
-          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+          data: ['一月份', '二月份', '三月份', '四月份', '五月份', '六月份', '七月份', '八月份', '九月份', '十月份', '十一月份', '十二月份']
         },
         yAxis: {
           type: 'value'
@@ -46,8 +46,21 @@ export default {
         series: [{
           name: '销量',
           type: 'bar',
-          data: [5, 20, 36, 10, 10, 20]
-        }]
+          data: [5, 20, 36, 10, 13, 20, 40, 28, 65, 32, 49, 55]
+        }],
+        color: {
+          type: 'linear',
+          x: 0,
+          y: 0,
+          x2: 0,
+          y2: 1,
+          colorStops: [{
+              offset: 0, color: '#27ACCF' // 0% 处的颜色
+          }, {
+              offset: 1, color: '#1471E9' // 100% 处的颜色
+          }],
+          globalCoord: false // 缺省为 false
+      }
       })
     },
     drawLine () {

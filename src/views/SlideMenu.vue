@@ -40,6 +40,12 @@
         </el-menu-item>
       </router-link>
     </el-submenu>
+    <router-link to="/test">
+      <el-menu-item index="test">
+        <i class="el-icon-setting"></i>
+        <span slot="title">测试</span>
+      </el-menu-item>
+    </router-link>
   </el-menu>
 </template>
 <style lang="scss" scoped>
