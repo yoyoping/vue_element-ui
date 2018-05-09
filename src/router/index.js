@@ -37,25 +37,100 @@ export default new Router({
       component: _import_('Layout'),
       redirect: '/systemConfig/userList',
       meta: {
-        title: '系统配置'
+        title: '系统管理'
       },
       children: [
-        {
-          path: 'userList',
-          name: 'userList',
-          component: _import_('systemConfig/userList/Index'),
-          meta: {
-            title: '用户管理',
-            role: 'user'
-          }
-        },
         {
           path: 'auth',
           name: 'auth',
           component: _import_('systemConfig/auth/Index'),
           meta: {
-            title: '权限配置',
+            title: '权限管理',
             role: 'user'
+          }
+        },
+        {
+          path: 'account',
+          name: 'account',
+          component: _import_('systemConfig/account/Index'),
+          meta: {
+            title: '账号管理',
+            role: 'user'
+          }
+        },
+        {
+          path: 'role',
+          name: 'role',
+          component: _import_('systemConfig/role/Index'),
+          meta: {
+            title: '角色管理',
+            role: 'user'
+          }
+        },
+        {
+          path: 'menu',
+          name: 'menu',
+          component: _import_('systemConfig/menu/Index'),
+          meta: {
+            title: '菜单管理',
+            role: 'user'
+          }
+        },
+        {
+          path: 'opearteLog',
+          name: 'opearteLog',
+          component: _import_('systemConfig/opearteLog/Index'),
+          meta: {
+            title: '操作日志',
+            role: 'user'
+          }
+        }
+      ]
+    },
+    {
+      path: 'userList',
+      name: 'userList',
+      component: _import_('Layout'),
+      redirect: '/userList',
+      children: [
+        {
+          path: '/userList',
+          name: 'userList',
+          component: _import_('userList/Index'),
+          meta: {
+            title: '用户管理'
+          }
+        }
+      ]
+    },
+    {
+      path: 'adviser',
+      name: 'adviser',
+      component: _import_('Layout'),
+      redirect: '/adviser',
+      children: [
+        {
+          path: '/adviser',
+          name: 'adviser',
+          component: _import_('adviser/Index'),
+          meta: {
+            title: '顾问列表'
+          }
+        }
+      ]
+    },
+    {
+      path: 'eva',
+      name: 'eva',
+      component: _import_('Layout'),
+      redirect: '/eva',
+      children: [
+        {
+          path: '/eva',
+          name: 'eva',
+          component: _import_('eva/Index'),
+          meta: {
+            title: '评价列表'
           }
         }
       ]
@@ -108,14 +183,14 @@ export default new Router({
       ]
     },
     {
-      path: '',
+      path: 'test',
       name: 'test',
       component: _import_('Layout'),
       redirect: '/test',
       children: [
         {
           path: '/test',
-          name: 'index',
+          name: 'test',
           component: _import_('test_/Index'),
           meta: {
             title: '测试'

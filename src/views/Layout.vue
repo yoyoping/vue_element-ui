@@ -10,8 +10,8 @@
         </el-aside>
         <el-container class="rg">
           <el-main>
-            <!-- 面包屑 -->
-            <breadcrumb></breadcrumb>
+            <!-- 标签页 -->
+            <tags></tags>
             <div class="content_ scroll">
               <transition name="fade">
                 <router-view></router-view>
@@ -27,11 +27,11 @@
 <script>
 import SlideMenu from './SlideMenu'
 import Herder_ from './Header_'
-import breadcrumb from '_components/breadcrumb' //
+import tags from '_components/tags' //
 export default {
   name: 'App',
   components: {
-    SlideMenu, Herder_, breadcrumb
+    SlideMenu, Herder_, tags
   }
 }
 </script>
