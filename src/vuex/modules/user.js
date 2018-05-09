@@ -7,7 +7,7 @@ if (localStorage.userInfo) {
 const user = {
   state: {
     userInfo: userInfo_,
-    message: '张平',
+    message: '点击我',
     count: 1
   },
   mutations: {
@@ -16,6 +16,12 @@ const user = {
     },
     SET_COUNT: (state, res) => {
       state.count = res
+    },
+    ADD_COUNT: (state) => {
+      state.count += 1
+    },
+    MINUS_COUNT: (state) => {
+      state.count -= 1
     }
   },
   actions: {
@@ -24,6 +30,12 @@ const user = {
     },
     setcount ({ commit }, res) {
       commit('SET_COUNT', res)
+    },
+    addCount ({commit}) {
+      commit('ADD_COUNT')
+    },
+    minusCount ({commit}) {
+      commit('MINUS_COUNT')
     }
   }
 }
