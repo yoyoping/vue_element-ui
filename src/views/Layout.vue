@@ -14,7 +14,10 @@
             <tags></tags>
             <div class="content_ scroll">
               <transition name="fade">
-                <router-view></router-view>
+                <keep-alive v-if="isKeep">
+                  <router-view></router-view>
+                </keep-alive>
+                <router-view  v-if="!isKeep"></router-view>
               </transition>
             </div>
           </el-main>
@@ -32,6 +35,19 @@ export default {
   name: 'App',
   components: {
     SlideMenu, Herder_, tags
+  },
+  computed: {
+    isKeep () {
+      return this.$store.state.app.isKeep
+    }
+  },
+  watch: {
+    '$route': function(newval, oldval) {
+      console.log(newval)
+      let isKeep = newval.query.isKeep === true ? true : false
+      this.isKeep = isKeep
+      this.$store.commit('SET_KEEP', isKeep)
+    }
   }
 }
 </script>

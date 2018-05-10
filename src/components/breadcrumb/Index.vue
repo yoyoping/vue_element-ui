@@ -14,7 +14,7 @@ export default {
           arr.push(item)
         }
       }, this)
-      console.log(arr)
+      // console.log(arr)
       return arr
     }
   }

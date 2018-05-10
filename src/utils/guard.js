@@ -15,7 +15,6 @@ router.beforeEach((to, from, next) => {
       next()
 
       // 跳转的时候添加tag标签
-      debugger
       if (localStorage.tags) {
         tags = JSON.parse(localStorage.tags)
       } else {
@@ -23,7 +22,8 @@ router.beforeEach((to, from, next) => {
       }
       let tagsitem = {
         title: to.meta.title,
-        url: to.path
+        url: to.path,
+        name: to.name
       }
       let flagPush = true // 是否能添加进入标签数组
       if (tags.length === 0) {
@@ -40,7 +40,6 @@ router.beforeEach((to, from, next) => {
       }
       router.app.$store.commit('TAGS', JSON.stringify(tags))
       // localStorage.pageOpenList = JSON.stringify(tags)
-      // console.log(localStorage.pageOpenList)
     } else if (to.meta.role && roles.indexOf(to.meta.role) === -1) {
       Message({
         message: '您没有权限访问该页面',

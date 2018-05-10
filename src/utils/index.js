@@ -33,7 +33,6 @@ fetch.interceptors.request.use(config => {
 fetch.interceptors.response.use(response => {
   // 对响应数据做点什么
   const res = response.data
-  // console.log(res)
   // 200-成功  4001-token过期 5000-暂无数据 4004-未登录
   // if (res.status !== 200 && res.status !== 4001 && res.status !== 5000 && res.status !== 4004 && res.status !== 4013) {
   //   Message({

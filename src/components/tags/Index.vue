@@ -1,22 +1,19 @@
 <template>
   <div>
-    <!-- <el-tag type="info" size="medium">
-      <router-link to="/">首页</router-link>
-    </el-tag> -->
     <el-tag
+      v-for="(tag, index) in tags"
       :key="tag.title"
-      v-for="tag in tags"
-      closable
+      :type="type_(tag.name)"
+      :closable="tag.name !== 'index'"
       size="medium"
       :disable-transitions="false"
-      @close="handleClose(tag)">
-      <router-link :to="tag.url">
+      @close="handleClose(index, tag.name)">
+      <a @click="link_(tag.url)">
         {{tag.title}}
-      </router-link>
+      </a>
     </el-tag>
   </div>
 </template>
-
 <script>
   export default {
     data () {
@@ -28,14 +25,33 @@
     },
     computed: {
       tags () {
-        debugger
         return JSON.parse(this.$store.state.app.tags)
       }
     },
+    created () {
+      console.log(this.$route.name)
+    },
     methods: {
-      handleClose(tag) {
-        debugger
-        this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+      handleClose(index, name) {
+        this.tags.splice(index, 1)
+        console.log(this.tags)
+        if (name === this.$route.name) {
+          let url = this.tags[this.tags.length - 1].url;
+          this.$router.push(url)
+        }
+
+        this.$store.commit('TAGS', JSON.stringify(this.tags))
+      },
+      type_ (name) {
+        if(name === this.$route.name) {
+          return ''
+        } else {
+          return 'info'
+        }
+      },
+      link_ (url) {
+        this.$store.commit('SET_KEEP', true)
+        this.$router.push({ path: url, query: { isKeep: true }})
       }
     }
   }

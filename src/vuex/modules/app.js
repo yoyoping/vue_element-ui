@@ -1,6 +1,7 @@
 const app = {
   state: {
-    tags: localStorage.pageOpenList,
+    tags: localStorage.pageOpenList, // 打开的标签页
+    isKeep: true, // 是否缓存
     count: 0,
     type: '1'
   },
@@ -15,9 +16,11 @@ const app = {
       state.tags.splice(res, 1)
     },
     TAGS: (state, res) => {
-      debugger
       state.tags = res
       localStorage.tags = res
+    },
+    SET_KEEP: (state, res) => {
+      state.isKeep = res
     }
   },
   actions: {
