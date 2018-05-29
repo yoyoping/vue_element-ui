@@ -87,7 +87,7 @@ module.exports = {
     cssSourceMap: false,
     proxyTable: {
       '/api': { // 这里意思是对本机/api开头的API转发
-        target: 'http://127.0.0.1:8080',
+        target: 'http://api.kuanjiedai.com',
         changeOrigin: true,
         pathRewrite: {
           '^/api' : '/api',
